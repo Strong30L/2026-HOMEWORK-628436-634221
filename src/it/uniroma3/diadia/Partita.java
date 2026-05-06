@@ -45,7 +45,11 @@ public class Partita {
     }
 
     public boolean isFinita() {
-        return this.finita || this.vinta() || (this.giocatore.getCfu() == 0);
+        return this.finita || this.vinta() || (this.giocatore.getCfu() <= 0);
+    }
+
+    public boolean giocatoreIsVivo() {
+        return this.giocatore.getCfu() > 0;
     }
 
     public void setFinita() {
